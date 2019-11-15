@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gateway", "Gateway\Gateway.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{8DF8F374-25A5-4721-A8C8-C5083C5B31B4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankConnector", "BankConnector\BankConnector.csproj", "{6AF7158F-5432-4AEC-B803-90A590BB5A4A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{8DF8F374-25A5-4721-A8C8-C5083C5B31B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8DF8F374-25A5-4721-A8C8-C5083C5B31B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8DF8F374-25A5-4721-A8C8-C5083C5B31B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AF7158F-5432-4AEC-B803-90A590BB5A4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AF7158F-5432-4AEC-B803-90A590BB5A4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AF7158F-5432-4AEC-B803-90A590BB5A4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AF7158F-5432-4AEC-B803-90A590BB5A4A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
