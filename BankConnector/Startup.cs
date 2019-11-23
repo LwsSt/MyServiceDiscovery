@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Steeltoe.Discovery.Client;
 
 namespace BankConnector
 {
@@ -16,6 +17,7 @@ namespace BankConnector
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDiscoveryClient(Configuration);
             services.AddControllers();
         }
 
@@ -24,6 +26,7 @@ namespace BankConnector
         {
             app.UseHttpsRedirection();
 
+            app.UseDiscoveryClient();
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
