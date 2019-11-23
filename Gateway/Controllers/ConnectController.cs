@@ -7,7 +7,7 @@ namespace Gateway.Controllers
     public class ConnectController : ControllerBase
     {
         [HttpPost]
-        public ActionResult<string> Connect(ServiceRequest request)
+        public ActionResult<ServiceResponse> Connect(ServiceRequest request)
         {
             return NoContent();
         }

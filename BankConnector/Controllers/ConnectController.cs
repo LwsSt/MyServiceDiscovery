@@ -7,9 +7,13 @@ namespace BankConnector.Controllers
     public class ConnectController : ControllerBase
     {
         [HttpPost]
-        public ActionResult<string> Connect(ServiceRequest request)
+        public ActionResult<ServiceResponse> Connect(ServiceRequest request)
         {
-            return "Banking";
+            return new ServiceResponse()
+            {
+                Id = 1,
+                Item = string.Join(' ', request.Scopes)
+            };
         }
     }
 }
