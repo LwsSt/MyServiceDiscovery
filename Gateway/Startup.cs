@@ -1,8 +1,11 @@
+using Common.Client;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
+using Steeltoe.Common.Http.Discovery;
+using Steeltoe.Discovery.Client;
 
 [assembly: ApiController]
 [assembly: ApiConventionType(typeof(DefaultApiConventions))]
@@ -21,7 +24,11 @@ namespace Gateway
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDiscoveryClient(Configuration);
             services.AddControllers();
+
+            services.AddHttpClient<ConnectorApiClient>()
+                .AddHttpMessageHandler<DiscoveryHttpMessageHandler>();
 
             services.AddSwaggerGen(opt =>
             {
@@ -35,7 +42,7 @@ namespace Gateway
             app.UseHttpsRedirection();
 
             app.UseSwagger();
-
+            app.UseDiscoveryClient();
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
