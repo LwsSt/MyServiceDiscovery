@@ -2,7 +2,7 @@
 {
     public class ServiceResponse
     {
-        public int Id { get; set; }
-        public string Item { get; set; }
+        public string Connector { get; set; }
+        public string Response { get; set; }
     }
 }
