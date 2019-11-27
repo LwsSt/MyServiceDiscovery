@@ -1,7 +1,11 @@
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Steeltoe.Discovery.Client;
+
+[assembly: ApiController]
+[assembly: ApiConventionType(typeof(DefaultApiConventions))]
 
 namespace BankConnector
 {
