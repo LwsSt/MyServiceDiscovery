@@ -1,4 +1,5 @@
-﻿using System.Net.Http;
+﻿using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace Common.Client
@@ -14,7 +15,7 @@ namespace Common.Client
 
         public async Task<ServiceResponse> Connect(ServiceRequest request)
         {
-            var response = await client.PostAsJsonAsync("connect", request);
+            var response = await client.PostAsJsonAsync($"https://{request.Channel}/connect", request);
 
             return await response.Content.ReadAsAsync<ServiceResponse>();
         }
