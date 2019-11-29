@@ -5,6 +5,6 @@ namespace Common
     public class ServiceRequest
     {
         public Channel Channel { get; set; }
-        public ICollection<string> Scopes { get; set; }
+        public string Data { get; set; }
     }
 }

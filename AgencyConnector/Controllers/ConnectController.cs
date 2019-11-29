@@ -11,8 +11,8 @@ namespace AgencyConnector.Controllers
         {
             return new ServiceResponse()
             {
-                Connector = "Agency",
-                Response = string.Join(' ', request.Scopes)
+                Connector = "This response is from Agency Connector",
+                Response = request.Data
             };
         }
     }

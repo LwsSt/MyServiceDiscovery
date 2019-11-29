@@ -11,8 +11,8 @@ namespace BankConnector.Controllers
         {
             return new ServiceResponse()
             {
-                Connector = "Bank",
-                Response = string.Join(' ', request.Scopes)
+                Connector = "This response is from Bank Connector",
+                Response = request.Data
             };
         }
     }
