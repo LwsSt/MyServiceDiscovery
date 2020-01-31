@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 using Steeltoe.Common.Http.Discovery;
 using Steeltoe.Discovery.Client;
+using System.Text.Json.Serialization;
 
 [assembly: ApiController]
 [assembly: ApiConventionType(typeof(DefaultApiConventions))]
@@ -25,7 +26,8 @@ namespace Gateway
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDiscoveryClient(Configuration);
-            services.AddControllers();
+            services.AddControllers()
+                .AddJsonOptions(opt => opt.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
 
             services.AddHttpClient<ConnectorApiClient>()
                 .AddHttpMessageHandler<DiscoveryHttpMessageHandler>();
