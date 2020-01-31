@@ -3,6 +3,7 @@
     public enum Channel
     {
         Banking,
-        Agency
+        Agency,
+        Accountancy,
     }
 }
